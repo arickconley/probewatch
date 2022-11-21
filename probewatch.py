@@ -1,7 +1,6 @@
 from scapy.all import *
 from threading import Thread
 from mac_vendor_lookup import MacLookup, BaseMacLookup
-from progress.spinner import Spinner
 import argparse
 import pandas
 import time
@@ -16,6 +15,7 @@ def callback(packet):
         mac = packet.addr2.upper()
         ssid = packet.info.decode()
         bssid = packet.addr3.upper()
+        if bssid 
         try:
         	vendor = MacLookup().lookup(mac)
         except:
