@@ -4,7 +4,7 @@ Quick and easy Python script to monitor for WiFi probe request frames.
 
 ## CLI
 Run with:
-```python
+```
 python probewatch.py -h
 	usage: probewatch.py [-h] [-u] [-i INTERFACE]
 
