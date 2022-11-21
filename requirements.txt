@@ -1,0 +1,3 @@
+mac-vendor-lookup==0.1.12
+pandas==1.5.1
+scapy==2.4.5
