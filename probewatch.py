@@ -7,8 +7,9 @@ import time
 import os
 
 BaseMacLookup.cache_path = "probe_cache"
-networks = pandas.DataFrame(columns=["MAC","SSID","Vendor", "BSSID"])
+networks = pandas.DataFrame(columns=["MAC", "Vendor", "SSID", "BSSID"])
 networks.set_index("MAC", inplace=True)
+
 
 def callback(packet):
     if packet.haslayer(Dot11ProbeReq) and packet.subtype == 4 and len(packet.info.decode()) > 0:
@@ -19,7 +20,7 @@ def callback(packet):
         	vendor = MacLookup().lookup(mac)
         except:
         	vendor = 'n/a'
-        networks.loc[mac] = (ssid,vendor,bssid)
+        networks.loc[mac] = (vendor,ssid,bssid)
 
 
 def print_all():
@@ -28,9 +29,11 @@ def print_all():
         print(networks)
         time.sleep(1)
         
+        
 def check_for_updates():
     print("Please wait while database is updated")
     MacLookup().update_vendors()
+    
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
