@@ -15,7 +15,6 @@ def callback(packet):
         mac = packet.addr2.upper()
         ssid = packet.info.decode()
         bssid = packet.addr3.upper()
-        if bssid 
         try:
         	vendor = MacLookup().lookup(mac)
         except:
