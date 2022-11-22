@@ -17,9 +17,9 @@ def callback(packet):
         ssid = packet.info.decode()
         bssid = packet.addr3.upper()
         try:
-        	vendor = MacLookup().lookup(mac)
+            vendor = MacLookup().lookup(mac)
         except:
-        	vendor = 'n/a'
+            vendor = '[N/A]'
         networks.loc[mac] = (vendor,ssid,bssid)
 
 
