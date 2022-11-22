@@ -4,13 +4,13 @@ Quick and easy Python script to monitor for WiFi probe request frames.
 
 ## First run
 Update the MAC address database by running:
-```zsh
+```
 python probewatch.py -u
 ```
 
 ## CLI
 Run with:
-```zsh
+```
 python probewatch.py -h
 	usage: probewatch.py [-h] [-u] [-i INTERFACE]
 
