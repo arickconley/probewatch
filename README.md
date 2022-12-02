@@ -1,14 +1,19 @@
 # ProbeWatch
 
-Quick and easy Python script to monitor for WiFi probe request frames.
+Quick and easy Python script to monitor for WiFi probe request frames. It attempts to look up the manufacturer of the device by the MAC address.
 
-## First run
+![image](https://user-images.githubusercontent.com/2053328/205366842-7125c85f-ddcc-4733-b152-d86c068316d9.png)
+
+
+## CLI
+
+#### First run
 Update the MAC address database by running:
 ```
 python probewatch.py -u
 ```
 
-## CLI
+#### Help
 Run with:
 ```
 python probewatch.py -h
