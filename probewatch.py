@@ -12,7 +12,7 @@ networks.set_index("MAC", inplace=True)
 
 
 def callback(packet):
-    if packet.haslayer(Dot11ProbeReq) and packet.subtype == 4 and len(packet.info.decode()) > 0:
+    if packet.haslayer(Dot11ProbeReq) and packet.subtype == 4:
         mac = packet.addr2.upper()
         ssid = packet.info.decode()
         bssid = packet.addr3.upper()
